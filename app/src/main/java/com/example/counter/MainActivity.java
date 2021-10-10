@@ -19,6 +19,21 @@ public class MainActivity extends AppCompatActivity {
         binding.buttonPlus.setOnClickListener(v -> plusCount());
         binding.buttonMinus.setOnClickListener(v -> minusCount());
     }
+    private void plusCount(){
+        count++;
+        updateCount();
+    }
+    private void minusCount(){
+        count--;
+        if(count<0){
+          count = 0;
+        }
+        updateCount();
+    }
+
+    private void updateCount(){
+        binding.counter.setText(Integer.toString(count));
+    }
 
 
 }
